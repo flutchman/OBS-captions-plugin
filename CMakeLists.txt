@@ -23,7 +23,11 @@ if (USE_DEVMODE)
     set(DEVMODE ON)
 endif ()
 
-set(ENABLE_CUSTOM_API_KEY ON CACHE BOOL "set API key via settings UI field")
+set(ENABLE_CUSTOM_API_KEY OFF CACHE BOOL "set API key via settings UI field")
+if (ENABLE_CUSTOM_API_KEY)
+    set(ENABLE_CUSTOM_API_KEY ON)
+endif()
+
 set(GOOGLE_API_KEY "" CACHE STRING "google api key with speech API enabled")
 
 if (GOOGLE_API_KEY AND ENABLE_CUSTOM_API_KEY)
