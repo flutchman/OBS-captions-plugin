@@ -39,10 +39,10 @@ jobs:
             displayName: 'Setup & Build'
             workingDirectory: $(Build.SourcesDirectory)\CI\http
             env:
-               GOOGLE_API_KEY: $(GOOGLE_API_KEY)
-               ENABLE_CUSTOM_API_KEY: $(ENABLE_CUSTOM_API_KEY)
                CLEAN_OBS: 1
-
+               ENABLE_CUSTOM_API_KEY: 1
+               #GOOGLE_API_KEY: $(GOOGLE_API_KEY)
+               
          -  task: PublishPipelineArtifact@1
             inputs:
                path: '$(Build.SourcesDirectory)/CI/http/CI_build/release/'
